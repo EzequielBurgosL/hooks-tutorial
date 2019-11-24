@@ -1,24 +1,41 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import './Navbar.scss'
 
+const pages = [
+  '',
+ 'useState',
+ 'useState2',
+ 'useEffect'
+];
+
 export default function Navbar() {
   const [selected, setSelected] = useState(0)
+
+  useEffect(() => {
+    const path = window.location.pathname.split("/").pop()
+    const current = pages.findIndex(el => el === path);
+    setSelected(current);
+  }, [])
 
   return (
     <div className="navbar">
       <ul>
-        <li className={`navbar-links ${selected === 0 && 'navbar-links-selected'}`} onClick={() => setSelected(0)}>
-          <h2><Link to="/">Home</Link></h2>
-        </li>
-        <li className={`navbar-links ${selected === 1 && 'navbar-links-selected'}`} onClick={() => setSelected(1)}>
-          <h2><Link to="/example1">useState</Link></h2>
-        </li>
-        <li className={`navbar-links ${selected === 2 && 'navbar-links-selected'}`} onClick={() => setSelected(2)}>
-          <h2><Link to="/example2">Example2</Link></h2>
-        </li>
+        {pages.map((el, index) => {
+          return (
+            <li 
+              key={el}
+              className={`navbar-links ${selected === index && 'selected'}`} 
+              onClick={() => setSelected(index)}
+            >
+            {el
+              ? <h2><Link to={`/${el}`}>{el}</Link></h2> 
+              : <h2><Link to="/">Home</Link></h2>}
+            </li>
+          );
+        })}
       </ul>
     </div>
-  );
+  )
 }

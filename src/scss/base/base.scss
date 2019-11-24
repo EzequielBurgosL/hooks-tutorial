@@ -35,3 +35,22 @@ button{
 input{ 
   font-size: 1.5rem;
 }
+
+.btn{
+  cursor: pointer;
+  padding: 1rem;
+  min-width: 10rem;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  color: #e4e4e4;
+  background: #252525;
+  transition: all .3s ease-in;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover{
+    box-shadow: 0 0 10px rgba(211, 211, 211, 0.5);
+  }
+}

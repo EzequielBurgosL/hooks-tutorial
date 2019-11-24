@@ -1,9 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import Example2 from "./components/Example2";
-
-import { Home, Counter } from './components';
+import { Home, MultipleStates, FormFields, Pagination } from './components';
 import Navbar from "./Navbar";
 import Layout from "./Layout";
 
@@ -18,8 +16,9 @@ function App() {
          <Container>         
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/example1" component={Counter} />
-            <Route path="/example2" component={Example2} />
+            <Route exact path="/useState" component={FormFields} />
+            <Route exact path="/useState2" component={MultipleStates} />
+            <Route exact path="/useEffect" component={Pagination} />
           </Switch>
           </Container>
         </Layout>

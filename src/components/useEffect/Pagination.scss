@@ -1,0 +1,30 @@
+.pagination{
+  min-width: 50rem;
+
+  &-title{
+    display: inline-block;
+    padding-bottom: 2rem;
+    border-bottom: 5px solid lightgray;
+  }
+
+  &-buttons{
+    display: flex;
+    min-width: 40rem;
+    justify-content: space-evenly;
+  }
+
+  .beers{
+    padding: 2rem;
+  }
+
+  .beers-item{
+    margin-bottom: 2rem;
+  }
+
+  .beers-item-text{
+    max-width: 40rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

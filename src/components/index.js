@@ -1,7 +1,11 @@
 import Home from "./Home/Home";
-import Counter from "./useState/Counter";
+import FormFields from "./useState";
+import MultipleStates from "./useState2";
+import Pagination from "./useEffect";
 
 export {
   Home,
-  Counter
+  MultipleStates,
+  FormFields,
+  Pagination
 }
