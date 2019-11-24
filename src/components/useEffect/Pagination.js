@@ -56,7 +56,9 @@ export default function Pagination() {
 
 // export default function Pagination() {
 //   const [beers, setBeers] = useState([])
-//   const [page, setPage] = useState(parseInt(localStorage.getItem('page')) || 1);
+//   const [page, setPage] = useState(() => {
+//      parseInt(localStorage.getItem('page')) || 1
+//   });
 
 //   useEffect(() => {
 //     const path = `https://api.punkapi.com/v2/beers?page=${page}&per_page=5`

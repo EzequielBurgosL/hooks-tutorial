@@ -4,6 +4,7 @@ import MultipleStates from "./useState2";
 import Pagination from "./useEffect";
 import TodoApp from "./useReducer";
 import ContextApp from './useContext'
+import UseRefExample from './useRef';
 
 export {
   Home,
@@ -11,5 +12,6 @@ export {
   FormFields,
   Pagination,
   TodoApp,
-  ContextApp
+  ContextApp,
+  UseRefExample
 }
