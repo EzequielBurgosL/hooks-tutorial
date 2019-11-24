@@ -1,0 +1,56 @@
+.todoApp{
+  width: 100%;
+  min-width: 100rem;
+  min-height: 100vh;
+  padding: 10rem;
+  
+  &-header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    
+    h1{
+      padding-bottom: 1rem;
+      border-bottom: 5px solid lightgray;
+    }
+  }
+
+  h2{
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    border-bottom: 5px solid lightgray;
+    display: inline-block;
+  }
+
+  .todo-list{}
+  
+  .todo-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid lightgray;
+    box-shadow: 0 0 5px lightgrey;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+
+    &-text{
+      margin-left: 2rem;
+      min-width: 30rem;
+    }
+
+    &-input{
+      padding: 0.6rem;
+      border-radius: 3px;
+      background: #223073;
+      color: lightgray;
+    }
+  }
+
+  .btn{
+    padding: 0.5rem;
+  }
+}

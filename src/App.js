@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Home, MultipleStates, FormFields, Pagination } from './components';
+import { Home, MultipleStates, FormFields, Pagination, TodoApp, ContextApp } from './components';
 import Navbar from "./Navbar";
 import Layout from "./Layout";
 
@@ -19,6 +19,8 @@ function App() {
             <Route exact path="/useState" component={FormFields} />
             <Route exact path="/useState2" component={MultipleStates} />
             <Route exact path="/useEffect" component={Pagination} />
+            <Route exact path="/useReducer" component={TodoApp} />
+            <Route exact path="/useContext" component={ContextApp} />
           </Switch>
           </Container>
         </Layout>

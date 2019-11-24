@@ -7,7 +7,9 @@ const pages = [
   '',
  'useState',
  'useState2',
- 'useEffect'
+ 'useEffect',
+ 'useReducer',
+ 'useContext'
 ];
 
 export default function Navbar() {
