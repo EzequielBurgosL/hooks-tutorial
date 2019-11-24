@@ -5,6 +5,7 @@ import Pagination from "./useEffect";
 import TodoApp from "./useReducer";
 import ContextApp from './useContext'
 import UseRefExample from './useRef';
+import UseImperativeHandleExample from './useImperativeHandle'
 
 export {
   Home,
@@ -13,5 +14,6 @@ export {
   Pagination,
   TodoApp,
   ContextApp,
-  UseRefExample
+  UseRefExample,
+  UseImperativeHandleExample
 }

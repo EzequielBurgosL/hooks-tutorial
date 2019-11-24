@@ -8,9 +8,10 @@ const pages = [
  'useState',
  'useState2',
  'useEffect',
+ 'useRef',
  'useReducer',
  'useContext',
- 'useRef'
+ 'useImperativeHandle'
 ];
 
 export default function Navbar() {
@@ -33,8 +34,8 @@ export default function Navbar() {
               onClick={() => setSelected(index)}
             >
             {el
-              ? <h2><Link to={`/${el}`}>{el}</Link></h2> 
-              : <h2><Link to="/">Home</Link></h2>}
+              ? <h3><Link to={`/${el}`}>{el}</Link></h3> 
+              : <h3><Link to="/">Home</Link></h3>}
             </li>
           );
         })}

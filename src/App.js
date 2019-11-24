@@ -8,7 +8,8 @@ import {
   Pagination, 
   TodoApp, 
   ContextApp,
-  UseRefExample 
+  UseRefExample,
+  UseImperativeHandleExample
 } from './components';
 import Navbar from "./Navbar";
 import Layout from "./Layout";
@@ -30,6 +31,7 @@ function App() {
             <Route exact path="/useReducer" component={TodoApp} />
             <Route exact path="/useContext" component={ContextApp} />
             <Route exact path="/useRef" component={UseRefExample} />
+            <Route exact path="/useImperativeHandle" component={UseImperativeHandleExample} />
           </Switch>
           </Container>
         </Layout>
