@@ -6,10 +6,13 @@ import { UserContext } from "./UserContext";
 
 import './ContextApp.scss';
 
-function ContextApp() {
-  const [user, setUser] = useState(null);
+function useUser(initialVal){
+  const [user, setUser] = useState(initialVal);
+  return { user, setUser };
+}
 
-  const value = useMemo(() => ({ user, setUser }), [user, setUser]);
+function ContextApp() {
+  const value = useUser(null);
 
   return (
     <div className="contextApp">      

@@ -10,7 +10,7 @@ import {
   ContextApp,
   UseRefExample,
   UseImperativeHandleExample
-} from './components';
+} from './components';    // los importa del index.js del Components
 import Navbar from "./Navbar";
 import Layout from "./Layout";
 

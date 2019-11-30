@@ -3,18 +3,18 @@ import { UserContext } from "../UserContext";
 import { login } from "../api/login";
 
 export default function Index() {
-  const { user, setUser } = useContext(UserContext);
+  const value = useContext(UserContext);
 
   return (
     <div className="contextApp-container">
       <h2>Home</h2>
-      <pre>{JSON.stringify(user, null, 2)}</pre>
-      {user ? (
+      <pre>{JSON.stringify(value.user, null, 2)}</pre>
+      {value.user ? (
         <button
           className="btn"
           onClick={() => {
             // call logout
-            setUser(null);
+            value.setUser(null);
           }}
         >
           logout
@@ -24,7 +24,7 @@ export default function Index() {
           className="btn"
           onClick={async () => {
             const user = await login();
-            setUser(user);
+            value.setUser(user);
           }}
         >
           login

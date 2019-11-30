@@ -3,26 +3,9 @@ import React, { useState, useEffect } from 'react'
 import './Pagination.scss';
 
 // Aquí podemos separar la llamada API de la presentación:
-// function useBeersSearch() {
-//   const [beers, setBeers] = useState([]);
-//   const [page, setPage] = useState(1);
-
-//   useEffect(() => {
-//     const path = `https://api.punkapi.com/v2/beers?page=${page}&per_page=5`
-    
-//     fetch(path)
-//       .then(response => response.json())
-//       .then(data => console.log(data) || setBeers(data))
-//       .catch(error => console.log('error', error))
-//   }, [page])
-
-//   return { page, beers, setPage };
-// }
-
-export default function Pagination() {
-  const [beers, setBeers] = useState([])
+function useBeersSearch() {
+  const [beers, setBeers] = useState([]);
   const [page, setPage] = useState(1);
-  // const { page, beers, setPage } = useBeersSearch()
 
   useEffect(() => {
     const path = `https://api.punkapi.com/v2/beers?page=${page}&per_page=5`
@@ -32,6 +15,22 @@ export default function Pagination() {
       .then(data => console.log(data) || setBeers(data))
       .catch(error => console.log('error', error))
   }, [page])
+
+  return { page, beers, setPage };
+}
+
+export default function Pagination() {
+  const [beers, setBeers] = useState([])
+  const [page, setPage] = useState(1);
+  // const { page, beers, setPage } = useBeersSearch()
+
+  // useEffect(() => {
+  //   const path = `https://api.punkapi.com/v2/beers?page=${page}&per_page=5`
+  //   fetch(path)
+  //     .then(response => response.json())
+  //     .then(data => console.log(data) || setBeers(data))
+  //     .catch(error => console.log('error', error))
+  // }, [page]) // si el array está vacío, es un Mount, si le pongo una dependencia, quedará escuchando la dependencia => CDUPDATE
 
   return (
     <div className="pagination">
@@ -54,10 +53,12 @@ export default function Pagination() {
 }
 
 
+// ESTE CODIGO RECUERDA LA PÁGINA AL RECARGAR
+
 // export default function Pagination() {
 //   const [beers, setBeers] = useState([])
 //   const [page, setPage] = useState(() => {
-//      parseInt(localStorage.getItem('page')) || 1
+//      parseInt(localStorage.getItem('page')) || 1    ----->>> Guardo la info de la página en local
 //   });
 
 //   useEffect(() => {

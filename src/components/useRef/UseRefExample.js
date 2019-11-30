@@ -4,7 +4,7 @@ import './UseRefExample.scss';
 
 const App = () => {
   const [email, setEmail] = useState('')
-  const inputRef = useRef();
+  const inputRef = useRef();  // -->>> defino la referencia   (1)
   const hello = useRef(() => console.log("hello"));
 
   const [dataDisplay, setDataDisplay] = useState(true);
@@ -16,14 +16,14 @@ const App = () => {
           <button
             className="btn"
             onClick={() => {
-              inputRef.current.focus();
+              inputRef.current.focus();   // ---> ejecuto el método del elemento referenciado. el input.current identifica el elemento, el .focus() es el método que le aplico
               hello.current();
             }}
           >
             focus input
           </button>
           <input
-            ref={inputRef}
+            ref={inputRef}  // --->>> asigno la referencia (2)
             name="email"
             value={email}
             onChange={e => setEmail(e.target.value)}
@@ -60,12 +60,13 @@ const DataDisplay = () => {
   );
 };
 
-
+// PERFORMANCE, PARA EVITAR QUE QUEDE "ENGANCHADO" EL COMPONENTE Y NO SE PUEDE ACTUALIZAR EL ESTADO
 const useFetch = url => {
   const isCurrent = useRef(true);
   const [state, setState] = useState({ data: null, loading: true });
 
   useEffect(() => {
+    // Éste es el CWUnmount del useEffect
     return () => {
       // called when the component is going to unmount:
       isCurrent.current = false;

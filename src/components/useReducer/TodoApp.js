@@ -28,7 +28,6 @@ function appReducer(state, action) {
         return item;
       });
     }
-
     case "delete": {
       return state.filter(item => item.id !== action.payload);
     }
@@ -49,16 +48,16 @@ function appReducer(state, action) {
   }
 }
 
-const Context = React.createContext();
+const TodosContext = React.createContext();
 
 export default function TodosApp() {
-  const [state, dispatch] = useReducer(appReducer, []);
+  const [state, dispatch] = useReducer(appReducer, []);  // el segundo parámetro es el estado inicial
 
   const newUsers = state.filter(el => el.completed === false)
   const savedUsers = state.filter(el => el.completed === true)
 
   return (
-    <Context.Provider value={dispatch}>
+    <TodosContext.Provider value={dispatch}>
       <div className="todoApp">
         <div className="todoApp-header">
           <h1>Hotel California</h1>
@@ -72,7 +71,7 @@ export default function TodosApp() {
         <h2>Saved Users</h2>
         <TodosList items={savedUsers} />
       </div>
-    </Context.Provider>
+    </TodosContext.Provider>
   );
 }
 
@@ -88,7 +87,7 @@ function TodosList({ items }) {
 
 function TodoItem({ id, text = "" }) {
   const [value, setValue] = useState("");
-  const dispatch = useContext(Context);
+  const dispatch = useContext(TodosContext);
 
   return (
     <div className="todo-item">
